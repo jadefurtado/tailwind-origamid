@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+    /* Estendendo o tema com as cores personalizadas */
+    --color-verde-200: #ACEF75;
+    --color-verde-300: #91EE77;
+    --color-verde-400: #17E880;
+    --color-verde-700: #2E482C;
+    --color-verde-800: #16281F;
+    --color-verde-900: #0F1C15;
+    --color-verde-950: #030504;
+}

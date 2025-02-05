@@ -9,5 +9,33 @@
     --color-verde-800: #16281F;
     --color-verde-900: #0F1C15;
     --color-verde-950: #030504;
+
+    --animate-slide-in: slide-in 0.4s ease-in-out forwards;
+    --animate-slide-in-400: slide-in 0.4s ease-in-out forwards 0.4s;
+    --animate-slide-in-300: slide-in 0.4s ease-in-out forwards 0.3s;
+    --animate-slide-in-200: slide-in 0.4s ease-in-out forwards 0.2s;
+    --animate-slide-in-100: slide-in 0.4s ease-in-out forwards 0.1s;
+
+    --animate-fade-in: fade-in 0.4s ease-in-out forwards;
+
+    @keyframes slide-in {
+        0% {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
 }
 

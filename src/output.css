@@ -384,6 +384,12 @@
     --color-verde-800: #16281F;
     --color-verde-900: #0F1C15;
     --color-verde-950: #030504;
+    --animate-slide-in: slide-in 0.4s ease-in-out forwards;
+    --animate-slide-in-400: slide-in 0.4s ease-in-out forwards 0.4s;
+    --animate-slide-in-300: slide-in 0.4s ease-in-out forwards 0.3s;
+    --animate-slide-in-200: slide-in 0.4s ease-in-out forwards 0.2s;
+    --animate-slide-in-100: slide-in 0.4s ease-in-out forwards 0.1s;
+    --animate-fade-in: fade-in 0.4s ease-in-out forwards;
   }
 }
 @layer base {
@@ -609,9 +615,6 @@
   .z-40 {
     z-index: 40;
   }
-  .z-50 {
-    z-index: 50;
-  }
   .z-auto {
     z-index: auto;
   }
@@ -740,9 +743,6 @@
   }
   .mb-12 {
     margin-bottom: calc(var(--spacing) * 12);
-  }
-  .mb-96 {
-    margin-bottom: calc(var(--spacing) * 96);
   }
   .box-border {
     box-sizing: border-box;
@@ -1039,6 +1039,21 @@
   }
   .animate-none {
     animation: none;
+  }
+  .animate-slide-in {
+    animation: var(--animate-slide-in);
+  }
+  .animate-slide-in-100 {
+    animation: var(--animate-slide-in-100);
+  }
+  .animate-slide-in-200 {
+    animation: var(--animate-slide-in-200);
+  }
+  .animate-slide-in-300 {
+    animation: var(--animate-slide-in-300);
+  }
+  .animate-slide-in-400 {
+    animation: var(--animate-slide-in-400);
   }
   .cursor-pointer {
     cursor: pointer;
@@ -1380,15 +1395,6 @@
       border-bottom-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
     }
   }
-  .divide-y-2 {
-    :where(& > :not(:last-child)) {
-      --tw-divide-y-reverse: 0;
-      border-bottom-style: var(--tw-border-style);
-      border-top-style: var(--tw-border-style);
-      border-top-width: calc(2px * var(--tw-divide-y-reverse));
-      border-bottom-width: calc(2px * calc(1 - var(--tw-divide-y-reverse)));
-    }
-  }
   .divide-y-reverse {
     :where(& > :not(:last-child)) {
       --tw-divide-y-reverse: 1;
@@ -1397,11 +1403,6 @@
   .divide-verde-800 {
     :where(& > :not(:last-child)) {
       border-color: var(--color-verde-800);
-    }
-  }
-  .divide-verde-900 {
-    :where(& > :not(:last-child)) {
-      border-color: var(--color-verde-900);
     }
   }
   .place-self-auto {
@@ -1599,9 +1600,6 @@
   .border-verde-800 {
     border-color: var(--color-verde-800);
   }
-  .border-verde-900 {
-    border-color: var(--color-verde-900);
-  }
   .bg-\(--my_variable\) {
     background-color: var(--my_variable);
   }
@@ -1616,9 +1614,6 @@
   }
   .bg-\[var\(--my_variable\)\] {
     background-color: var(--my_variable);
-  }
-  .bg-blue-500 {
-    background-color: var(--color-blue-500);
   }
   .bg-red-500 {
     background-color: var(--color-red-500);
@@ -2551,11 +2546,6 @@
       gap: calc(var(--spacing) * 4);
     }
   }
-  .\*\:rounded {
-    :is(& > *) {
-      border-radius: 0.25rem;
-    }
-  }
   .\*\:rounded-md {
     :is(& > *) {
       border-radius: var(--radius-md);
@@ -2633,20 +2623,6 @@
       }
     }
   }
-  .hover\:underline {
-    &:hover {
-      @media (hover: hover) {
-        text-decoration-line: underline;
-      }
-    }
-  }
-  .hover\:underline-offset-8 {
-    &:hover {
-      @media (hover: hover) {
-        text-underline-offset: 8px;
-      }
-    }
-  }
   .hover\:before\:w-10 {
     &:hover {
       @media (hover: hover) {
@@ -2710,23 +2686,11 @@
       }
     }
   }
-  .max-lg\:divide-white {
-    @media (width < 64rem) {
-      :where(& > :not(:last-child)) {
-        border-color: var(--color-white);
-      }
-    }
-  }
   .max-lg\:divide-white\/10 {
     @media (width < 64rem) {
       :where(& > :not(:last-child)) {
         border-color: color-mix(in oklab, var(--color-white) 10%, transparent);
       }
-    }
-  }
-  .max-lg\:bg-white\/10 {
-    @media (width < 64rem) {
-      background-color: color-mix(in oklab, var(--color-white) 10%, transparent);
     }
   }
   .max-lg\:p-8 {
@@ -3068,6 +3032,24 @@
   50% {
     transform: none;
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 @property --tw-translate-x {

@@ -10,7 +10,6 @@
     --color-verde-900: #0F1C15;
     --color-verde-950: #030504;
 
-    --animate-slide-in: slide-in 0.4s ease-in-out forwards;
     --animate-slide-in-400: slide-in 0.4s ease-in-out forwards 0.4s;
     --animate-slide-in-300: slide-in 0.4s ease-in-out forwards 0.3s;
     --animate-slide-in-200: slide-in 0.4s ease-in-out forwards 0.2s;

@@ -2,9 +2,8 @@
 @layer theme, base, components, utilities;
 @layer theme {
   :root {
-    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    --font-sans: "DM Sans", sans-serif;
+    --font-serif: "DM Serif Display", serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
       "Liberation Mono", "Courier New", monospace;
     --color-red-50: oklch(0.971 0.013 17.38);
@@ -842,9 +841,6 @@
     width: 100%;
     height: 100%;
   }
-  .h-0 {
-    height: calc(var(--spacing) * 0);
-  }
   .h-0\.5 {
     height: calc(var(--spacing) * 0.5);
   }
@@ -868,9 +864,6 @@
   }
   .min-h-screen {
     min-height: 100vh;
-  }
-  .w-1 {
-    width: calc(var(--spacing) * 1);
   }
   .w-1\/2 {
     width: calc(1/2 * 100%);
@@ -1625,9 +1618,6 @@
   .bg-verde-900 {
     background-color: var(--color-verde-900);
   }
-  .bg-verde-950 {
-    background-color: var(--color-verde-950);
-  }
   .bg-verde-950\/40 {
     background-color: color-mix(in oklab, var(--color-verde-950) 40%, transparent);
   }
@@ -1658,10 +1648,6 @@
   }
   .via-none {
     --tw-gradient-via-stops: initial;
-  }
-  .from-verde-950 {
-    --tw-gradient-from: var(--color-verde-950);
-    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position,) var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
   .from-verde-950\/80 {
     --tw-gradient-from: color-mix(in oklab, var(--color-verde-950) 80%, transparent);
@@ -3047,6 +3033,12 @@
   }
   .radial-gradient {
     background-image: radial-gradient( 50% 100% at 50% 0%, #2E482C 0%, #16281F 100% );
+  }
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+  .font-serif {
+    font-family: var(--font-serif);
   }
 }
 @keyframes spin {

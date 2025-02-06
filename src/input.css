@@ -17,6 +17,9 @@
 
     --animate-fade-in: fade-in 0.4s ease-in-out forwards;
 
+    --font-sans: "DM Sans", sans-serif;
+    --font-serif: "DM Serif Display", serif;
+
     @keyframes slide-in {
         0% {
             opacity: 0;
@@ -67,6 +70,13 @@
             theme(colors.verde.800) 100%
         );
     }
+
+    .font-sans {
+        font-family: var(--font-sans);
+    }
     
+    .font-serif {
+        font-family: var(--font-serif);
+    }
 }
 
